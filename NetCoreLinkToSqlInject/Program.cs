@@ -1,4 +1,5 @@
 using NetCoreLinkToSqlInject.Models;
+using NetCoreLinkToSqlInject.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +14,8 @@ car.Imagen = "https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/face
 car.Velocidad = 0;
 car.VelocidadMax = 350;
 builder.Services.AddTransient<ICoche, Coche>(x => car);
+/*builder.Services.AddTransient<RepositoryDoctorSQL>();*/
+builder.Services.AddTransient<RepositoryDoctorOracle>();
 
 builder.Services.AddControllersWithViews();
 

@@ -1,0 +1,20 @@
+﻿
+<h4 class="mb-4">Create a new Doctor</h4>
+
+<button class="btn btn-primary mb-4">
+    <a asp-controller="Departamentos" asp-action="Index" class="link-dark">Volver a Index</a>
+</button>
+
+<form method="post" class="form">
+    <label>Id Hospital</label>
+    <input type="text" name="hospital_cod" class="form-control" required />
+    <label>Apellido</label>
+    <input type="text" name="apellido" class="form-control" required />
+    <label>Especialidad</label>
+    <input type="text" name="especialidad" class="form-control" required />
+    <label>Salario</label>
+    <input type="text" name="salario" class="form-control" required />
+    <button class="btn btn-info">Create</button>
+</form>
+
+<h4>@ViewData["MENSAJE"]</h4>

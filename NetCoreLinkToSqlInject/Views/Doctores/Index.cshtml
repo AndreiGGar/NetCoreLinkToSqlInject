@@ -1,0 +1,39 @@
+﻿@model List<Doctor>
+
+<h4 class="mb-4">Listado depts</h4>
+
+<table class="table table-active table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>HOSPITAL</th>
+            <th>APELLIDO</th>
+            <th>ESPECIALIDAD</th>
+            <th>SALARIO</th>
+            <th>ACTIONS</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Doctor doctor in Model)
+        {
+            <tr>
+                <td>@doctor.DOCTOR_NO</td>
+                <td>@doctor.HOSPITAL_COD</td>
+                <td>@doctor.APELLIDO</td>
+                <td>@doctor.ESPECIALIDAD</td>
+                <td>@doctor.SALARIO</td>
+                <td>
+                    @*<button class="btn btn-warning">
+                        @Html.ActionLink("Details", "Details", "Doctores", new { id = doctor.DOCTOR_NO})
+                    </button>*@
+                    <button class="btn btn-danger mx-auto">
+                        @Html.ActionLink("Delete", "Delete", "Doctores", new { id = doctor.DOCTOR_NO})
+                    </button>
+                    @*<button class="btn btn-dark mx-auto">
+                        @Html.ActionLink("Update", "Update", "Doctores", new { id = doctor.DOCTOR_NO})
+                    </button>*@
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
